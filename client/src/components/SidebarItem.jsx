@@ -24,12 +24,12 @@ const SidebarItem = ({ icon, text, active, alert, link }) => {
         {alert && (
           <div className="relative flex h-2 w-2">
             <div
-              className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-emerald-300 ${
+              className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-orange-400 ${
                 expanded ? "" : "right-2 top-[-5px]"
               }`}
             ></div>
             <span
-              className={`relative inline-flex rounded-full h-2 w-2 bg-emerald-400 ${
+              className={`relative inline-flex rounded-full h-2 w-2 bg-orange-500 ${
                 expanded ? "" : "right-2 top-[-5px]"
               }`}
             ></span>

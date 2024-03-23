@@ -1,7 +1,7 @@
 import image from "../assets/image.png";
+import { CtaButton } from "../components";
 
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -22,9 +22,7 @@ const Landing = () => {
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum,
               nobis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             </p>
-            <Link className=" z-0" to="/register">
-              Register Page
-            </Link>
+            <CtaButton to="/register" text="Get Started" />
           </div>
           <img src={image} alt="Library" className="relative w-1/2" />
         </div>

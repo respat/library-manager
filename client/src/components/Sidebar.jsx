@@ -17,8 +17,8 @@ const Sidebar = ({ children }) => {
       <nav className="h-full flex flex-col border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <Logo
-            style={`overflow-hidden transition-all duration-100 ${
-              expanded ? " h-6" : "w-0"
+            style={`overflow-hidden transition-all duration-100 opacity-80 ${
+              expanded ? " h-7" : "w-0"
             }`}
           />
           <button
