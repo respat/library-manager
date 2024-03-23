@@ -7,10 +7,10 @@ import {
   BsBookmark,
   BsColumns,
   BsArchive,
-  BsInbox,
   BsBarChart,
   BsInfoLg,
 } from "react-icons/bs";
+import { GoInbox } from "react-icons/go";
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
@@ -35,11 +35,20 @@ const DashboardLayout = () => {
             icon={<BsColumns size={20} />}
             text="Dashboard"
             active={true}
+            link=""
           />
-          <SidebarItem icon={<BsArchive size={20} />} text="Books" />
-          <SidebarItem icon={<BsBarChart size={20} />} text="Statistics" />
+          <SidebarItem
+            icon={<BsArchive size={20} />}
+            text="Books"
+            link="all-books"
+          />
+          <SidebarItem
+            icon={<BsBarChart size={20} />}
+            text="Statistics"
+            link="stats"
+          />
           <SidebarItem icon={<BsBookmark size={20} />} text="Bookmarks" />
-          <SidebarItem icon={<BsInbox size={20} />} text="Inbox" alert={true} />
+          <SidebarItem icon={<GoInbox size={20} />} text="Inbox" alert={true} />
           <hr className="my-3" />
           <SidebarItem icon={<IoSettingsOutline size={20} />} text="Settings" />
           <SidebarItem icon={<BsInfoLg size={20} />} text="Help" />
