@@ -1,9 +1,10 @@
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import SearchBar from "./SearchBar";
 const TopBar = () => {
   return (
-    <div className="w-full flex bg-slate-50 h-16">
+    <div className="w-full flex h-16 shadow-sm">
       <div className="flex w-full justify-between items-center mx-6 ">
-        <div className="">search</div>
+        <SearchBar />
         <div className=" flex items-center py-1 px-2 border rounded-lg">
           <img
             src="https://ui-avatars.com/api/?background=0D8ABC&color=fff"

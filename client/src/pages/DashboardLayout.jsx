@@ -58,9 +58,11 @@ const DashboardLayout = () => {
           <SidebarItem icon={<BsInfoLg size={20} />} text="Help" />
         </Sidebar>
 
-        <div className="">
+        <div className="w-full">
           <TopBar />
-          <Outlet />
+          <div className="w-full p-10">
+            <Outlet />
+          </div>
         </div>
       </main>
     </DashboardContext.Provider>
