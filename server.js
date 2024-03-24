@@ -5,6 +5,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 
 import bookRouter from "./routes/bookRouter.js";
+import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 
 dotenv.config();
 const app = express();
@@ -20,10 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/books", bookRouter);
 
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: "something went wrong" });
-});
+app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 5100;
 
 try {
