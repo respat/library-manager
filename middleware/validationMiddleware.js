@@ -40,6 +40,15 @@ export const validateIdParam = withValidationErrors([
   }),
 ]);
 
+export const validateUserIdParam = withValidationErrors([
+  param("id").custom(async (value) => {
+    const isValidId = mongoose.Types.ObjectId.isValid(value);
+    if (!isValidId) throw new BadRequestError("invalid MongoDB id");
+    const user = await User.findById(value);
+    if (!user) throw new NotFoundError(`no user with id ${id}`);
+  }),
+]);
+
 export const validateRegisterInput = withValidationErrors([
   body("omId").notEmpty().withMessage("OM id is required"),
   body("name").notEmpty().withMessage("name is required"),
