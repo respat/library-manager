@@ -1,17 +1,18 @@
 import mongoose from "mongoose";
+import { BOOK_CATEGORIES } from "../utils/constants.js";
 
 const BookSchema = new mongoose.Schema(
   {
     title: String,
     author: String,
-    year: Date,
+    year: Number,
     publisher: String,
     ISBN: Number,
     quantity: Number,
     category: {
       type: String,
-      enum: ["Category 1", "Category 2", "Category 2"],
-      default: "Category 1",
+      enum: Object.values(BOOK_CATEGORIES),
+      default: Object.values(BOOK_CATEGORIES.OTHER),
     },
   },
   { timestamps: true }
