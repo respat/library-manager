@@ -2,6 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import Book from "../models/BookModel.js";
 
 export const getAllBooks = async (req, res) => {
+  console.log(req);
   const books = await Book.find({});
   res.status(StatusCodes.OK).json({ books });
 };

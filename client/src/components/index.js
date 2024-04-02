@@ -6,3 +6,4 @@ export { default as CtaButton } from "./CtaButton";
 export { default as SidebarItem } from "./SidebarItem";
 export { default as TopBar } from "./TopBar";
 export { default as SearchBar } from "./SearchBar";
+export { default as StatItem } from "./StatItem";

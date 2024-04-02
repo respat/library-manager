@@ -43,8 +43,8 @@ const SidebarItem = ({ icon, text, active, alert, link }) => {
 SidebarItem.propTypes = {
   icon: PropTypes.any.isRequired,
   text: PropTypes.string.isRequired,
-  alert: PropTypes.boolean,
-  active: PropTypes.boolean,
+  alert: PropTypes.bool,
+  active: PropTypes.any,
   link: PropTypes.string,
 };
 
