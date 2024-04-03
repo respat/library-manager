@@ -4,7 +4,7 @@ const FormRow = ({ type, name, labelText, defaultValue }) => {
     <div className="flex flex-col">
       <label htmlFor={name}>{labelText || name}</label>
       <input
-        className="ml-10 bg-slate-300"
+        className="border rounded-lg pl-1 h-7"
         type={type}
         name={name}
         id={name}

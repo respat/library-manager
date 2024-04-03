@@ -11,14 +11,18 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "admin"],
     default: "user",
   },
-  bookmarkedBooks: {
-    bookId: { type: Schema.Types.ObjectId, ref: "Book" },
-  },
-  borrowedBooks: {
-    bookId: { type: Schema.Types.ObjectId, ref: "Book" },
-    borrowDate: Date,
-    dueDate: Date,
-  },
+  bookmarkedBooks: [
+    {
+      bookId: { type: Schema.Types.ObjectId, ref: "Book" },
+    },
+  ],
+  borrowedBooks: [
+    {
+      bookId: { type: Schema.Types.ObjectId, ref: "Book" },
+      borrowDate: Date,
+      dueDate: Date,
+    },
+  ],
 });
 
 UserSchema.methods.toJSON = function () {

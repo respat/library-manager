@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, redirect, useLoaderData } from "react-router-dom";
 import { Sidebar, SidebarItem, TopBar } from "../components";
 import { createContext, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -11,10 +11,21 @@ import {
   BsInfoLg,
 } from "react-icons/bs";
 import { GoInbox } from "react-icons/go";
+import customFetch from "../utils/customFetch";
+
+export const loader = async () => {
+  try {
+    const { data } = await customFetch.get("users/current-user");
+    console.log(data);
+    return data;
+  } catch (error) {
+    return redirect("/");
+  }
+};
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
-  const user = { name: "john" };
+  // const { user } = useLoaderData();
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation();
   const toggleSidebar = () => {
@@ -28,7 +39,7 @@ const DashboardLayout = () => {
 
   return (
     <DashboardContext.Provider
-      value={{ user, showSidebar, toggleSidebar, logoutUser }}
+      value={{ showSidebar, toggleSidebar, logoutUser }}
     >
       {/* <Navbar /> */}
       <main className="w-full flex">

@@ -118,3 +118,30 @@ export const validateUpdateUserInput = withValidationErrors([
       }
     }),
 ]);
+
+export const validateBorrowedBookInput = [
+  body("userId")
+    .notEmpty()
+    .withMessage("User ID is required")
+    .custom((value) => mongoose.Types.ObjectId.isValid(value))
+    .withMessage("Invalid User ID format"),
+  body("bookId")
+    .notEmpty()
+    .withMessage("Book ID is required")
+    .custom((value) => mongoose.Types.ObjectId.isValid(value))
+    .withMessage("Invalid Book ID format"),
+  body("borrowDate")
+    .notEmpty()
+    .withMessage("Borrow date is required")
+    .isISO8601()
+    .withMessage("Borrow date must be a valid date in YYYY-MM-DD format"),
+  body("dueDate")
+    .notEmpty()
+    .withMessage("Due date is required")
+    .isISO8601()
+    .withMessage("Due date must be a valid date in YYYY-MM-DD format")
+    .custom((value, { req }) => {
+      return new Date(value) > new Date(req.body.borrowDate);
+    })
+    .withMessage("Due date must be after borrow date"),
+];
