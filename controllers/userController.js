@@ -16,6 +16,17 @@ export const getAllUsers = async (req, res) => {
 export const getCurrentUser = async (req, res) => {
   const user = await User.findOne({ _id: req.user.userId });
   const userWithoutPassword = user.toJSON();
+  const today = new Date();
+
+  const updatedBorrowedBooks = user.borrowedBooks.map((borrowedBook) => {
+    const isBookExpired = new Date(borrowedBook.dueDate) < today;
+    return {
+      ...borrowedBook.toObject(),
+      isExpired: isBookExpired,
+    };
+  });
+  userWithoutPassword.borrowedBooks = updatedBorrowedBooks;
+
   res.status(StatusCodes.OK).json({ user });
 };
 
@@ -58,19 +69,25 @@ export const addBorrowedBook = async (req, res) => {
         .status(StatusCodes.BAD_REQUEST)
         .json({ message: "Book is already borrowed by this user" });
     }
-
-    // Hozzáadás a kölcsönzött könyvekhez
     const borrowedBook = {
       bookId,
-      borrowDate: new Date(borrowDate),
-      dueDate: new Date(dueDate),
+      borrowDate: new Date(Date.now()).toISOString(),
+      dueDate: new Date(dueDate).toISOString(),
     };
+    if (new Date(borrowedBook.borrowDate) > new Date(borrowedBook.dueDate)) {
+      // return res
+      //   .status(StatusCodes.BAD_REQUEST)
+      //   .json({ message: "Due date cannot be earlier than borrow date." });
+    }
+    console.log(borrowedBook.borrowDate, borrowedBook.dueDate);
+
     user.borrowedBooks.push(borrowedBook);
 
     await user.save();
-    res
-      .status(StatusCodes.OK)
-      .json({ message: "Book added to borrowed books", user });
+    res.status(StatusCodes.OK).json({
+      message: "Book added to borrowed books",
+      user,
+    });
   } catch (error) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       message: "Error adding book to borrowed books",

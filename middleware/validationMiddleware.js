@@ -34,6 +34,7 @@ export const validateBookInput = withValidationErrors([
   body("title").notEmpty().withMessage("title is required"),
   body("author").notEmpty().withMessage("author is required"),
   body("publisher").notEmpty().withMessage("pubisher is required"),
+  body("ISBN").notEmpty().withMessage("ISBN is required"),
   body("category")
     .isIn(Object.values(BOOK_CATEGORIES))
     .withMessage("Invalid book category"),

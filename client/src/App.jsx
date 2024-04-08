@@ -15,7 +15,9 @@ import {
 
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
+import { action as addBookAction } from "./pages/AddBook";
 import { loader as dashboardLoader } from "./pages/DashboardLayout";
+import { loader as allBooksLoader } from "./pages/AllBooks";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +43,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <AddBook />,
+            action: addBookAction,
           },
           {
             path: "stats",
@@ -49,6 +52,7 @@ const router = createBrowserRouter([
           {
             path: "all-books",
             element: <AllBooks />,
+            loader: allBooksLoader,
           },
           {
             path: "profile",

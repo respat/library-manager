@@ -1,8 +1,8 @@
 export const BOOK_CATEGORIES = {
-  MATHEMATICS: "mathematics",
-  LANGUAGES: "languages",
-  COMPUTER_SCIENCE: "computer Science",
-  OTHER: "other",
+  MATHEMATICS: "Mathematics",
+  LANGUAGES: "Languages",
+  COMPUTER_SCIENCE: "Computer Science",
+  OTHER: "Other",
 };
 
 export const BOOK_SORT_BY = {

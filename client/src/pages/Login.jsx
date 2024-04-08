@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <>
       <div className="w-screen h-screen flex justify-center items-center">
-        <div className=" w-8/12">
+        <div className=" w-8/12 md:w-1/4">
           <Form method="post" className=" flex flex-col gap-2">
             <Logo />
             {/* <div className="flex justify-center">
@@ -46,8 +46,8 @@ const Login = () => {
             >
               {isSubmitting ? "submitting..." : "submit"}
             </button>
-            <p>Already a member?</p>
-            <Link to="/login">Login Page</Link>
+            <p>Not registered?</p>
+            <Link to="/register">Register Page</Link>
           </Form>
         </div>
       </div>

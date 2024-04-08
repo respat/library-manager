@@ -23,9 +23,9 @@ const Register = () => {
   const isSubmitting = navigation.state === "submitting";
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <div className=" w-8/12">
+      <div className=" w-8/12 sm:w-1/2">
         <Form method="post" className=" flex flex-col gap-2">
-          <Logo />
+          <Logo style={" opacity-70"} />
           {/* <div className="flex justify-center">
             <h4 className="">Regisztráció</h4>
           </div> */}

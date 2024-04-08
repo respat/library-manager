@@ -1,5 +1,6 @@
-import { Outlet, redirect, useLoaderData } from "react-router-dom";
+import { Outlet, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import { Sidebar, SidebarItem, TopBar } from "../components";
+import { toast } from "react-toastify";
 import { createContext, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -25,15 +26,19 @@ export const loader = async () => {
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
-  // const { user } = useLoaderData();
+  const { user } = useLoaderData();
+  const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation();
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+  console.log(user);
 
   const logoutUser = async () => {
-    console.log("Logged out");
+    navigate("/");
+    await customFetch.get("/auth/logout");
+    toast.success("Logged out.");
   };
   const isActive = (path) => location.pathname === path;
 
@@ -70,7 +75,7 @@ const DashboardLayout = () => {
         </Sidebar>
 
         <div className="w-full">
-          <TopBar />
+          <TopBar user={user.lastName + " " + user.name} />
           <div className="w-full p-10">
             <Outlet />
           </div>

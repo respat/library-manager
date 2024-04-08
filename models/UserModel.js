@@ -19,8 +19,9 @@ const UserSchema = new mongoose.Schema({
   borrowedBooks: [
     {
       bookId: { type: Schema.Types.ObjectId, ref: "Book" },
-      borrowDate: Date,
+      borrowDate: { type: Date, default: () => Date.now() },
       dueDate: Date,
+      isExpired: Boolean,
     },
   ],
 });

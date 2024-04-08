@@ -9,8 +9,6 @@ import { createContext, useContext, useState } from "react";
 const SidebarContext = createContext();
 
 const Sidebar = ({ children }) => {
-  const data = useDashboardContext();
-  console.log(data);
   const [expanded, setExpanded] = useState(true);
   return (
     <div className="h-screen">
