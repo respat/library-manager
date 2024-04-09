@@ -3,11 +3,11 @@ import { BooksContainer, SearchContainer } from "../components";
 import customFetch from "../utils/customFetch";
 import { useLoaderData } from "react-router-dom";
 import { useContext, createContext } from "react";
-import AddBook from "./AddBook";
 
 export const loader = async () => {
   try {
     const { data } = await customFetch.get("books");
+    console.log(data);
     return { data };
   } catch (error) {
     toast.error(error?.response?.data?.msg);
@@ -20,14 +20,16 @@ const AllBooksContext = createContext();
 const AllBooks = () => {
   const { data } = useLoaderData();
   return (
-    <AllBooksContext.Provider value={{ data }}>
-      <div className="">
-        <SearchContainer />
-        <div>
-          <BooksContainer />
+    <div className="flex">
+      <AllBooksContext.Provider value={{ data }}>
+        <div className="">
+          <SearchContainer />
+          <div>
+            <BooksContainer />
+          </div>
         </div>
-      </div>
-    </AllBooksContext.Provider>
+      </AllBooksContext.Provider>
+    </div>
   );
 };
 

@@ -23,7 +23,7 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
 };
 FormRowSelect.propTypes = {
   name: PropTypes.string.isRequired,
-  list: PropTypes.object,
+  list: PropTypes.array,
   labelText: PropTypes.string,
   defaultValue: PropTypes.string,
 };

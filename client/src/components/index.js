@@ -9,4 +9,7 @@ export { default as TopBar } from "./TopBar";
 export { default as SearchBar } from "./SearchBar";
 export { default as StatItem } from "./StatItem";
 export { default as BooksContainer } from "./BooksContainer";
+// export { default as UsersContainer } from "./UsersContainer";
 export { default as SearchContainer } from "./SearchContainer";
+export { default as Dropdown } from "./Dropdown";
+export { default as EditBook } from "./EditBook";

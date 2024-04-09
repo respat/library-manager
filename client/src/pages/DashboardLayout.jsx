@@ -62,6 +62,12 @@ const DashboardLayout = () => {
             active={isActive("/dashboard/all-books")}
           />
           <SidebarItem
+            icon={<BsArchive size={20} />}
+            text="Users"
+            link="all-users"
+            active={isActive("/dashboard/all-users")}
+          />
+          <SidebarItem
             icon={<BsBarChart size={20} />}
             text="Statistics"
             link="stats"
