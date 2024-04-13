@@ -10,3 +10,4 @@ export { default as AddBook } from "./AddBook";
 export { default as DeleteBook } from "./DeleteBook";
 export { default as Profile } from "./Profile";
 export { default as Stats } from "./Stats";
+export { default as AllUsers } from "./AllUsers";

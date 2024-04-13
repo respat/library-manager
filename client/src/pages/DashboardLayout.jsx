@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { createContext, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IoSettingsOutline } from "react-icons/io5";
+import { FiUsers } from "react-icons/fi";
 import {
   BsBookmark,
   BsColumns,
@@ -62,7 +63,7 @@ const DashboardLayout = () => {
             active={isActive("/dashboard/all-books")}
           />
           <SidebarItem
-            icon={<BsArchive size={20} />}
+            icon={<FiUsers size={20} />}
             text="Users"
             link="all-users"
             active={isActive("/dashboard/all-users")}

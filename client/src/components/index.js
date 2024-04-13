@@ -14,3 +14,6 @@ export { default as Book } from "./Book";
 export { default as SearchContainer } from "./SearchContainer";
 export { default as Dropdown } from "./Dropdown";
 export { default as EditBook } from "./EditBook";
+export { default as UsersContainer } from "./UsersContainer";
+export { default as User } from "./User";
+export { default as BorrowedBook } from "./BorrowedBook";
