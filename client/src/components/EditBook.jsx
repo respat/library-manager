@@ -33,18 +33,44 @@ const EditBook = ({
     }
   };
   return (
-    <div className="flex gap-5 bg-white m-4 p-4 border shadow-sm rounded-md">
+    <div className="flex gap-5 w-full bg-white m-4 p-4 ">
       <form onSubmit={submit} className="flex flex-col w-full">
-        <h4>Edit Book</h4>
-        <div className="">
-          <FormRow type="text" name="title" defaultValue={title} />
-          <FormRow type="text" name="author" defaultValue={author} />
-          <FormRow type="text" name="publisher" defaultValue={publisher} />
-          <FormRow type="number" name="year" defaultValue={year} />
-          <FormRow type="number" name="quantity" defaultValue={quantity} />
+        <h1 className=" font-semibold text-xl mb-2">Edit Book</h1>
+        <div className="flex flex-col gap-2">
+          <FormRow
+            type="text"
+            name="title"
+            labelText="Title"
+            defaultValue={title}
+          />
+          <FormRow
+            type="text"
+            name="author"
+            labelText="Author"
+            defaultValue={author}
+          />
+          <FormRow
+            type="text"
+            name="publisher"
+            labelText="Publisher"
+            defaultValue={publisher}
+          />
+          <FormRow
+            type="number"
+            name="year"
+            labelText="Year"
+            defaultValue={year}
+          />
+          <FormRow
+            type="number"
+            name="quantity"
+            labelText="Quantity"
+            defaultValue={quantity}
+          />
           <FormRow type="number" name="ISBN" defaultValue={ISBN} />
           <FormRowSelect
             name="category"
+            labelText="Category"
             list={Object.values(BOOK_CATEGORIES)}
             defaultValue={category}
           />

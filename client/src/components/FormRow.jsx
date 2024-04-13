@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 const FormRow = ({ type, name, labelText, defaultValue }) => {
   return (
-    <div className="flex flex-col">
-      <label htmlFor={name}>{labelText || name}</label>
+    <div className="flex flex-col ">
+      <label className="font-semibold" htmlFor={name}>
+        {labelText || name}
+      </label>
       <input
         className="border rounded-lg pl-1 h-7"
         type={type}

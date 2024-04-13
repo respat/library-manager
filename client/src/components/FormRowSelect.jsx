@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
   return (
     <div className="flex flex-col">
-      <label htmlFor="category">{labelText || name}</label>
+      <label className="font-semibold" htmlFor="category">
+        {labelText || name}
+      </label>
       <select
         className="h-8 border rounded-lg"
         name={name}

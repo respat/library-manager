@@ -8,6 +8,5 @@ export { default as AllBooks } from "./AllBooks";
 export { default as Error } from "./Error";
 export { default as AddBook } from "./AddBook";
 export { default as DeleteBook } from "./DeleteBook";
-export { default as EditBook } from "./EditBook";
 export { default as Profile } from "./Profile";
 export { default as Stats } from "./Stats";

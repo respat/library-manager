@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { BooksContainer, SearchContainer } from "../components";
+import { BooksContainer, EditBook, SearchContainer } from "../components";
 import customFetch from "../utils/customFetch";
 import { useLoaderData } from "react-router-dom";
 import { useContext, createContext } from "react";
@@ -20,15 +20,17 @@ const AllBooksContext = createContext();
 const AllBooks = () => {
   const { data } = useLoaderData();
   return (
-    <div className="flex">
-      <AllBooksContext.Provider value={{ data }}>
-        <div className="">
-          <SearchContainer />
-          <div>
-            <BooksContainer />
+    <div>
+      <div className="flex">
+        <AllBooksContext.Provider value={{ data }}>
+          <div className="w-full">
+            <SearchContainer />
+            <div>
+              <BooksContainer />
+            </div>
           </div>
-        </div>
-      </AllBooksContext.Provider>
+        </AllBooksContext.Provider>
+      </div>
     </div>
   );
 };
