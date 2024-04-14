@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiEditLine } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import PropTypes from "prop-types";
 
 import { useNavigate } from "react-router-dom";
-import { EditBook } from ".";
+import { EditBook, FormRowSelectUser } from ".";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
+import { useAllUsersContext } from "../pages/AllUsers";
 
 const Book = ({
   _id,
@@ -23,6 +24,8 @@ const Book = ({
     color = " bg-red-500";
   }
   const [expanded, setExpanded] = useState(false);
+  const [book, setBook] = useState(true);
+
   const navigate = useNavigate();
   const handleDelete = async () => {
     try {
@@ -37,7 +40,7 @@ const Book = ({
     <div
       className={`flex h-48  ${
         expanded ? "h-min" : "h-48"
-      } p-4 m-4 border rounded-md w-full bg-white shadow-sm `}
+      } p-4 m-4 border rounded-md w-max-full bg-white shadow-sm `}
     >
       <div className="flex flex-col  ">
         <div className=" gap-5 h-40 p-4 flex items-center">
@@ -57,12 +60,18 @@ const Book = ({
               <p className=" font-medium text-sm opacity-70">{ISBN}</p>
               <p className=" font-medium text-sm opacity-70">{publisher}</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col md:flex-row gap-3">
               <button
                 onClick={() => setExpanded(!expanded)}
                 className="w-9 h-9 border hover:bg-yellow-200 hover:border-yellow-300 hover:shadow-yellow-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm"
               >
                 <RiEditLine className="opacity-80" />
+              </button>
+              <button
+                onClick={() => setBook(!book)}
+                className="w-9 h-9 border font-semibold text-xl hover:bg-yellow-200 hover:border-yellow-300 hover:shadow-yellow-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm"
+              >
+                +
               </button>
               <button
                 onClick={handleDelete}
@@ -85,6 +94,9 @@ const Book = ({
             quantity={quantity}
           />
         </div>
+        {/* <div className={`flex  ${book ? "flex" : "hidden"}`}>
+          <FormRowSelectUser name="asd" labelText={"asd"} list={users} />
+        </div> */}
       </div>
     </div>
   );
@@ -95,7 +107,7 @@ Book.propTypes = {
   author: PropTypes.string,
   year: PropTypes.number,
   publisher: PropTypes.string,
-  category: PropTypes.array,
+  category: PropTypes.string,
   quantity: PropTypes.number,
   ISBN: PropTypes.number,
 };

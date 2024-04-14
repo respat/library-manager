@@ -7,7 +7,6 @@ import BorrowedBook from "./BorrowedBook";
 
 const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
   const [expanded, setExpanded] = useState(false);
-
   return (
     <div
       className={`flex h-48  ${
@@ -47,7 +46,20 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
             </div>
           </div>
         </div>
-        <div className={`flex  ${expanded ? "flex" : "hidden"}`}></div>
+        <div className={`flex  ${expanded ? "flex" : "hidden"}`}>
+          {borrowedBooks.map((book) => {
+            return (
+              <BorrowedBook
+                key={book.bookId}
+                bookId={book.bookId}
+                title={book.title}
+                borrowDate={book.borrowDate}
+                dueDate={book.dueDate}
+                isExpired={book.isExpired}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

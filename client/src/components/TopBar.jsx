@@ -9,8 +9,7 @@ const TopBar = ({ user }) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="w-full flex h-16 shadow-sm">
-      <div className="flex w-full justify-between items-center mx-6 ">
-        <SearchBar />
+      <div className="flex w-full justify-end items-center mx-6 ">
         <div className="relative flex items-center py-1 px-2 border rounded-lg">
           <img
             src={`https://ui-avatars.com/api/?name=${user}&rounded=true&background=0D8ABC`}
