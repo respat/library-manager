@@ -31,16 +31,12 @@ const Book = ({
   const [dueDate, setDueDate] = useState("");
   const navigate = useNavigate();
   const handleDelete = async () => {
-    if (role === "admin") {
-      try {
-        await customFetch.delete(`books/${_id}`);
-        toast.success("Book deleted successfully");
-        navigate("/dashboard/all-books");
-      } catch (error) {
-        toast.error(error?.response.data);
-      }
-    } else {
-      console.log("not authorized");
+    try {
+      await customFetch.delete(`books/${_id}`);
+      toast.success("Book deleted successfully");
+      navigate("/dashboard/all-books");
+    } catch (error) {
+      toast.error(error?.response.data);
     }
   };
   const handleBorrowBook = async (dueDate) => {

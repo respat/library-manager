@@ -5,7 +5,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import PropTypes from "prop-types";
 import BorrowedBook from "./BorrowedBook";
 
-const User = ({ _id, name, lastName, omId, email, borrowedBooks, role }) => {
+const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
   const [expanded, setExpanded] = useState(() => {
     const saved = localStorage.getItem("expanded");
     return saved === "true" ? true : false;
