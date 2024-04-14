@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { Book, BooksContainer, UsersContainer } from "../components";
+import { UsersContainer } from "../components";
 import customFetch from "../utils/customFetch";
 import { useLoaderData } from "react-router-dom";
 import { useContext, createContext } from "react";
@@ -7,7 +7,6 @@ import { useContext, createContext } from "react";
 export const loader = async () => {
   try {
     const { data } = await customFetch.get("users");
-    console.log(data);
     return { data };
   } catch (error) {
     toast.error(error?.response?.data?.msg);
@@ -23,7 +22,6 @@ const AllUsers = () => {
     <div>
       <AllUsersContext.Provider value={{ data }}>
         <UsersContainer />
-        <BooksContainer />
       </AllUsersContext.Provider>
     </div>
   );

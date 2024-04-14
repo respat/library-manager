@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 
-const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
+const FormRowSelectUser = ({
+  name,
+  labelText,
+  list,
+  onChange,
+  defaultValue = "",
+}) => {
   return (
     <div className="flex flex-col">
       <label className="font-semibold" htmlFor="category">
@@ -11,11 +17,15 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
         name={name}
         id={name}
         defaultValue={defaultValue || ""}
+        onChange={onChange}
       >
-        {list.map((value) => {
+        {list.map((user) => {
           return (
-            <option key={value} value={value}>
-              {value}
+            <option key={user.id} value={user.id}>
+              <p>
+                {user.lastName + " " + user.name}{" "}
+                <span className="opacity-70">{user.omId}</span>
+              </p>
             </option>
           );
         })}
@@ -23,11 +33,11 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
     </div>
   );
 };
-FormRowSelect.propTypes = {
+FormRowSelectUser.propTypes = {
   name: PropTypes.string.isRequired,
   list: PropTypes.string,
   labelText: PropTypes.string,
   defaultValue: PropTypes.string,
 };
 
-export default FormRowSelect;
+export default FormRowSelectUser;

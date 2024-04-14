@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiEditLine } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import PropTypes from "prop-types";
-import Book from "./Book";
 import BorrowedBook from "./BorrowedBook";
 
-const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
-  const [expanded, setExpanded] = useState(false);
+const User = ({ _id, name, lastName, omId, email, borrowedBooks, role }) => {
+  const [expanded, setExpanded] = useState(() => {
+    const saved = localStorage.getItem("expanded");
+    return saved === "true" ? true : false;
+  });
+  useEffect(() => {
+    localStorage.setItem("expanded", expanded);
+  }, [expanded]);
   return (
     <div
       className={`flex h-48  ${
@@ -38,7 +44,7 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
                 onClick={() => setExpanded(!expanded)}
                 className="w-9 h-9 border hover:bg-yellow-200 hover:border-yellow-300 hover:shadow-yellow-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm"
               >
-                <RiEditLine className="opacity-80" />
+                <RiArrowDropDownLine className="opacity-80" />
               </button>
               <button className="w-9 h-9 border hover:bg-red-300 hover:border-red-400 hover:shadow-red-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm">
                 <RiDeleteBin6Line className="opacity-80" />
@@ -46,19 +52,25 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
             </div>
           </div>
         </div>
-        <div className={`flex  ${expanded ? "flex" : "hidden"}`}>
-          {borrowedBooks.map((book) => {
-            return (
+        <div className={`flex flex-col ${expanded ? "flex" : "hidden"}`}>
+          {borrowedBooks.length > 0 ? (
+            borrowedBooks.map((book) => (
               <BorrowedBook
                 key={book.bookId}
                 bookId={book.bookId}
                 title={book.title}
+                userId={_id}
                 borrowDate={book.borrowDate}
                 dueDate={book.dueDate}
                 isExpired={book.isExpired}
+                expanded={expanded}
               />
-            );
-          })}
+            ))
+          ) : (
+            <div className="text-gray-500 text-center my-2">
+              No borrowed books
+            </div>
+          )}
         </div>
       </div>
     </div>
