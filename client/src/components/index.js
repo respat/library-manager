@@ -18,3 +18,4 @@ export { default as EditBook } from "./EditBook";
 export { default as UsersContainer } from "./UsersContainer";
 export { default as User } from "./User";
 export { default as BorrowedBook } from "./BorrowedBook";
+export { default as AddBook } from "./AddBook";

@@ -1,6 +1,6 @@
 import User from "./User";
-
 import { useAllUsersContext } from "../pages/AllUsers";
+
 const UsersContainer = () => {
   const { data } = useAllUsersContext();
   const { users } = data;
@@ -8,7 +8,7 @@ const UsersContainer = () => {
     return <div>No users</div>;
   }
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="flex flex-col w-max md:grid md:grid-cols-2 lg:grid-cols-3 gap-2">
       {users.map((user) => {
         return <User key={user._id} {...user} />;
       })}

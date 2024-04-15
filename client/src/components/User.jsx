@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { RiEditLine } from "react-icons/ri";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import {
+  RiEditLine,
+  RiDeleteBin6Line,
+  RiArrowDropDownLine,
+} from "react-icons/ri";
 import PropTypes from "prop-types";
 import BorrowedBook from "./BorrowedBook";
 
@@ -10,36 +12,39 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
     const saved = localStorage.getItem("expanded");
     return saved === "true" ? true : false;
   });
+
   useEffect(() => {
     localStorage.setItem("expanded", expanded);
   }, [expanded]);
+
   return (
     <div
-      className={`flex h-48  ${
+      className={`flex h-48 ${
         expanded ? "h-min" : "h-48"
-      } p-4 m-4 border rounded-md w-full bg-white shadow-sm `}
+      } p-2 m-2 border rounded-md w-full bg-white shadow-sm`}
     >
-      <div className="flex flex-col  ">
-        <div className=" gap-5 h-40 p-4 flex items-center">
+      <div className="flex flex-col">
+        <div className="gap-2 h-40 py-5 flex items-center">
           <div
-            className={`w-40 h-32 flex justify-center items-center bg-emerald-400 rounded-md `}
+            className={`w-24 h-24 md:w-28 md:h-32 flex justify-center items-center bg-emerald-400 rounded-md`}
           >
-            <h1 className=" font-bold text-3xl text-white opacity-80">
+            <h1 className="font-bold text-3xl text-white opacity-80">
               {lastName.charAt(0) + name.charAt(0)}
             </h1>
           </div>
-          <div className="flex h-full p-2 w-full justify-between ">
-            <div className="flex flex-col w-full justify-between">
+          <div className="flex h-full p-2 w-full justify-between">
+            <div className="flex flex-col w-2/4 justify-between">
               <div className="flex-col flex">
-                <h1 className="font-semibold text-xl opacity-95 w-10/12">
+                <h1 className="font-semibold md:text-xl opacity-95 w-10/12">
                   {lastName + " " + name}
                 </h1>
-                <p className=" font-medium text-sm opacity-70">{omId}</p>
+                <p className="font-medium text-sm opacity-70">{omId}</p>
+                {/* <p className="font-medium text-sm opacity-70 ">{email}</p> */}
               </div>
-              <p className=" font-medium text-sm opacity-70">{email}</p>
-              <p className=" font-medium text-sm opacity-70">{}</p>
+
+              <p className="font-medium text-sm opacity-70">{}</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 lg:flex-row">
               <button
                 onClick={() => setExpanded(!expanded)}
                 className="w-9 h-9 border hover:bg-yellow-200 hover:border-yellow-300 hover:shadow-yellow-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm"
@@ -75,6 +80,15 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
       </div>
     </div>
   );
+};
+
+User.propTypes = {
+  _id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  omId: PropTypes.string,
+  email: PropTypes.string,
+  borrowedBooks: PropTypes.array,
 };
 
 export default User;

@@ -18,12 +18,12 @@ import customFetch from "../utils/customFetch";
 export const loader = async () => {
   try {
     const { data } = await customFetch.get("users/current-user");
-    console.log(data);
     return data;
   } catch (error) {
     return redirect("/");
   }
 };
+
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
@@ -46,43 +46,35 @@ const DashboardLayout = () => {
     <DashboardContext.Provider
       value={{ showSidebar, toggleSidebar, logoutUser }}
     >
-      {/* <Navbar /> */}
-      <main className="w-full flex">
+      <main className="w-full flex overflow-hidden">
         <Sidebar>
-          <SidebarItem
-            icon={<BsColumns size={20} />}
-            text="Dashboard"
-            active={isActive("/dashboard")}
-            link=""
-          />
+          {user.role === "admin" && (
+            <SidebarItem
+              icon={<BsColumns size={20} />}
+              text="Dashboard"
+              active={isActive("/dashboard")}
+              link=""
+            />
+          )}
+
           <SidebarItem
             icon={<BsArchive size={20} />}
             text="Books"
             link="all-books"
             active={isActive("/dashboard/all-books")}
           />
-          <SidebarItem
-            icon={<FiUsers size={20} />}
-            text="Users"
-            link="all-users"
-            active={isActive("/dashboard/all-users")}
-          />
-          <SidebarItem
-            icon={<BsBarChart size={20} />}
-            text="Statistics"
-            link="stats"
-            active={isActive("/dashboard/stats")}
-          />
-          <SidebarItem icon={<BsBookmark size={20} />} text="Bookmarks" />
-          <SidebarItem icon={<GoInbox size={20} />} text="Inbox" alert={true} />
-          <hr className="my-3" />
-          <SidebarItem icon={<IoSettingsOutline size={20} />} text="Settings" />
-          <SidebarItem icon={<BsInfoLg size={20} />} text="Help" />
+          {user.role === "admin" && (
+            <SidebarItem
+              icon={<FiUsers size={20} />}
+              text="Users"
+              link="all-users"
+              active={isActive("/dashboard/all-users")}
+            />
+          )}
         </Sidebar>
-
         <div className="w-full">
           <TopBar user={user.lastName + " " + user.name} />
-          <div className="w-full p-10">
+          <div className="">
             <Outlet />
           </div>
         </div>

@@ -24,9 +24,6 @@ const Login = () => {
         <div className=" w-8/12 md:w-1/4">
           <Form method="post" className=" flex flex-col gap-2">
             <Logo />
-            {/* <div className="flex justify-center">
-            <h4 className="">Regisztráció</h4>
-          </div> */}
             <FormRow
               type="email"
               name="email"

@@ -104,17 +104,17 @@ const Book = ({
       } p-4 m-4 border rounded-md w-max-full bg-white shadow-sm `}
     >
       <div className="flex flex-col  ">
-        <div className=" gap-5 h-40 p-4 flex items-center">
+        <div className=" gap-5 h-40 p-2 flex items-center">
           <div
-            className={`w-28 h-32 flex justify-center items-center bg-emerald-400 rounded-md ${color}`}
+            className={`w-24 h-28 md:w-28 md:h-32 flex justify-center items-center bg-emerald-400 rounded-md ${color}`}
           >
             <h1 className=" font-bold text-3xl text-white opacity-80">
               {title.charAt(0)}
             </h1>
           </div>
-          <div className="flex h-full p-2 w-full ">
+          <div className="flex h-full w-full ">
             <div className="flex flex-col">
-              <h1 className="font-semibold text-xl opacity-95 w-10/12">
+              <h1 className="font-semibold md:text-xl opacity-95 w-10/12">
                 {title} ({year})
               </h1>
               <p className=" font-medium text-sm opacity-70">{author}</p>
@@ -122,7 +122,7 @@ const Book = ({
               <p className=" font-medium text-sm opacity-70">{publisher}</p>
             </div>{" "}
             {userRole === "admin" && (
-              <div className="flex flex-col md:flex-row gap-3">
+              <div className="flex flex-col lg:flex-row gap-3">
                 <button
                   onClick={() => setExpanded(!expanded)}
                   className="w-9 h-9 border hover:bg-yellow-200 hover:border-yellow-300 hover:shadow-yellow-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm"

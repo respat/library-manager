@@ -1,5 +1,11 @@
+import AddBook from "./AddBook";
+
 const SearchContainer = () => {
-  return <div>SearchContainer</div>;
+  return (
+    <div>
+      <AddBook />
+    </div>
+  );
 };
 
 export default SearchContainer;

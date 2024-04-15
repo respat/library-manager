@@ -33,7 +33,7 @@ const EditBook = ({
     }
   };
   return (
-    <div className="flex gap-5 w-full bg-white m-4 p-4 ">
+    <div className="flex gap-5 w-full bg-white m-4 ">
       <form onSubmit={submit} className="flex flex-col w-full">
         <h1 className=" font-semibold text-xl mb-2">Edit Book</h1>
         <div className="flex flex-col gap-2">
@@ -71,7 +71,7 @@ const EditBook = ({
           <FormRowSelect
             name="category"
             labelText="Category"
-            list={Object.values(BOOK_CATEGORIES)}
+            list={Object.values(BOOK_CATEGORIES) || []}
             defaultValue={category}
           />
           <button

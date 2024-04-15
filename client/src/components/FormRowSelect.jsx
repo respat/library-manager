@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
   return (
     <div className="flex flex-col">
-      <label className="font-semibold" htmlFor="category">
+      <label className="font-semibold" htmlFor={name}>
         {labelText || name}
       </label>
       <select
@@ -12,20 +12,22 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
         id={name}
         defaultValue={defaultValue || ""}
       >
-        {list.map((value) => {
-          return (
-            <option key={value} value={value}>
-              {value}
-            </option>
-          );
-        })}
+        {Array.isArray(list) &&
+          list.map((value) => {
+            return (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            );
+          })}
       </select>
     </div>
   );
 };
+
 FormRowSelect.propTypes = {
   name: PropTypes.string.isRequired,
-  list: PropTypes.array,
+  list: PropTypes.array.isRequired, // Make sure to mark this as required if it should always be provided
   labelText: PropTypes.string,
   defaultValue: PropTypes.string,
 };

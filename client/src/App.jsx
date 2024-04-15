@@ -8,8 +8,6 @@ import {
   Error,
   AddBook,
   Stats,
-  Profile,
-  Admin,
   AllBooks,
 } from "./pages";
 
@@ -48,23 +46,11 @@ const router = createBrowserRouter([
             action: addBookAction,
           },
           {
-            path: "stats",
-            element: <Stats />,
-          },
-          {
             path: "all-books",
             element: <AllBooks />,
             loader: allBooksLoader,
           },
           { path: "all-users", element: <AllUsers />, loader: allUsersLoader },
-          {
-            path: "profile",
-            element: <Profile />,
-          },
-          {
-            path: "admin",
-            element: <Admin />,
-          },
         ],
       },
     ],

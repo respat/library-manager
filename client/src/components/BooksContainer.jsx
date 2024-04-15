@@ -10,7 +10,7 @@ const BooksContainer = () => {
   }
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="flex flex-col  md:grid md:grid-cols-2 lg:grid-cols-3 gap-2 ">
       {books.map((book) => {
         return <Book key={book._id} {...book} />;
       })}
