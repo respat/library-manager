@@ -13,11 +13,6 @@ const Navbar = () => {
                 Kezdőlap
               </li>
             </Link>
-            <Link to="/">
-              <li className="font-medium px-5 py-2 h-8 flex justify-center items-center cursor-pointer">
-                Szolgáltatások
-              </li>
-            </Link>
             <Link to="/login">
               <li className="font-medium rounded-full shadow-sm px-6 py-2 h-8 flex bg-emerald-400 text-white justify-center items-center cursor-pointer">
                 Belépés

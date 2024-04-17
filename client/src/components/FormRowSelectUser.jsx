@@ -22,10 +22,7 @@ const FormRowSelectUser = ({
         {list.map((user) => {
           return (
             <option key={user.id} value={user.id}>
-              <p>
-                {user.lastName + " " + user.name}{" "}
-                <span className="opacity-70">{user.omId}</span>
-              </p>
+              {user.lastName + " " + user.name + " (" + user.omId + ")"}
             </option>
           );
         })}
@@ -35,7 +32,7 @@ const FormRowSelectUser = ({
 };
 FormRowSelectUser.propTypes = {
   name: PropTypes.string.isRequired,
-  list: PropTypes.string,
+  list: PropTypes.array,
   labelText: PropTypes.string,
   defaultValue: PropTypes.string,
 };

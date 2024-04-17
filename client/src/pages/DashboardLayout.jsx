@@ -48,14 +48,14 @@ const DashboardLayout = () => {
     >
       <main className="w-full flex overflow-hidden">
         <Sidebar>
-          {user.role === "admin" && (
+          {/* {user.role === "admin" && (
             <SidebarItem
               icon={<BsColumns size={20} />}
               text="Dashboard"
               active={isActive("/dashboard")}
               link=""
             />
-          )}
+          )} */}
 
           <SidebarItem
             icon={<BsArchive size={20} />}

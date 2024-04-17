@@ -165,7 +165,7 @@ const Book = ({
             defaultValue={dueDate}
           />
           <button
-            onClick={() => handleBorrowBook(new Date().toISOString())}
+            onClick={() => handleBorrowBook(dueDate)}
             className="mt-4 p-2 bg-emerald-400 text-white rounded"
           >
             Borrow Book

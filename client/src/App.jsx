@@ -7,8 +7,8 @@ import {
   Landing,
   Error,
   AddBook,
-  Stats,
   AllBooks,
+  Profile,
 } from "./pages";
 
 import { action as registerAction } from "./pages/Register";

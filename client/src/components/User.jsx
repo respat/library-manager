@@ -51,9 +51,9 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
               >
                 <RiArrowDropDownLine className="opacity-80" />
               </button>
-              <button className="w-9 h-9 border hover:bg-red-300 hover:border-red-400 hover:shadow-red-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm">
+              {/* <button className="w-9 h-9 border hover:bg-red-300 hover:border-red-400 hover:shadow-red-300 hover:shadow-md rounded-md flex justify-center items-center shadow-sm">
                 <RiDeleteBin6Line className="opacity-80" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ User.propTypes = {
   _id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  omId: PropTypes.string,
+  omId: PropTypes.number,
   email: PropTypes.string,
   borrowedBooks: PropTypes.array,
 };

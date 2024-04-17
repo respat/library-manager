@@ -6,11 +6,6 @@ import Navbar from "../components/Navbar";
 const Landing = () => {
   return (
     <div className="flex flex-col justify-center">
-      <div className="fixed top-0 w-full h-screen">
-        <div className="absolute top-0 right-96 h-screen">
-          <div className="w-20 h-3/5 bg-emerald-400"></div>
-        </div>
-      </div>
       <Navbar />
       <div className="flex w-full justify-center flex-col items-center">
         <div className="flex h-screen w-4/5 justify-center items-center">
@@ -24,7 +19,11 @@ const Landing = () => {
             </p>
             <CtaButton to="/register" text="Get Started" />
           </div>
-          <img src={image} alt="Library" className="relative w-1/2" />
+          <img
+            src={image}
+            alt="Library"
+            className="absolute md:relative w-full opacity-60 z-[-2] md:opacity-100 md:w-1/2"
+          />
         </div>
       </div>
     </div>

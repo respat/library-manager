@@ -16,9 +16,19 @@ const Dropdown = ({ style }) => {
 
   return (
     <div
-      className={`border absolute w-full left-0  transition-all opacity-80 rounded-md h-20 bottom-[-85px] bg-white shadow-sm ${style}`}
+      className={`border flex absolute w-full left-0 z-10 transition-all opacity-90 rounded-md h-20 bottom-[-85px] bg-white shadow-sm ${style}`}
     >
-      <button onClick={handleLogout}>Log out</button>
+      <div className="w-full m-3 gap-2 border-md flex flex-col justify-start">
+        {/* <button
+          className="hover:bg-slate-100 w-full"
+          onClick={() => navigate("/profile")}
+        >
+          Profile
+        </button> */}
+        <button className="hover:bg-slate-100 w-full" onClick={handleLogout}>
+          Log out
+        </button>
+      </div>
     </div>
   );
 };
