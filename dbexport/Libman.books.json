@@ -1,0 +1,147 @@
+[{
+  "_id": {
+    "$oid": "6612a5ed193d8a5b78c52e17"
+  },
+  "title": "The Joy of Calculus 20",
+  "author": "Alan Turing",
+  "year": 2014,
+  "publisher": "MathPress",
+  "ISBN": {
+    "$numberLong": "9780123456789"
+  },
+  "quantity": 5,
+  "category": "Mathematics",
+  "createdAt": {
+    "$date": "2024-04-07T13:55:57.999Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-14T07:23:21.622Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a620193d8a5b78c52e23"
+  },
+  "title": "Essentials of Java",
+  "author": "James Gosling",
+  "year": 2013,
+  "publisher": "ProgMasters",
+  "ISBN": {
+    "$numberLong": "9781098765432"
+  },
+  "quantity": 6,
+  "category": "Computer Science",
+  "createdAt": {
+    "$date": "2024-04-07T13:56:48.873Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-07T13:56:48.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a628193d8a5b78c52e25"
+  },
+  "title": "The World of Languages",
+  "author": "Noam Chomsky",
+  "year": 2011,
+  "publisher": "LangAcademy",
+  "ISBN": {
+    "$numberLong": "9782234567890"
+  },
+  "quantity": 4,
+  "category": "Languages",
+  "createdAt": {
+    "$date": "2024-04-07T13:56:56.581Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-13T08:47:07.913Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a635193d8a5b78c52e29"
+  },
+  "title": "The Universe Explained",
+  "author": "Carl Sagan",
+  "year": 2009,
+  "publisher": "CosmoBooks",
+  "ISBN": {
+    "$numberLong": "9783234567890"
+  },
+  "quantity": 2,
+  "category": "Other",
+  "createdAt": {
+    "$date": "2024-04-07T13:57:09.825Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-07T13:57:09.825Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a63d193d8a5b78c52e2b"
+  },
+  "title": "History of Mathematics",
+  "author": "Isaac Newton",
+  "year": 2008,
+  "publisher": "HistoryPress",
+  "ISBN": {
+    "$numberLong": "9783098765432"
+  },
+  "quantity": 5,
+  "category": "Mathematics",
+  "createdAt": {
+    "$date": "2024-04-07T13:57:17.482Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-07T13:57:17.482Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a643193d8a5b78c52e2d"
+  },
+  "title": "Introduction to Algorithms",
+  "author": "Thomas H. Cormen",
+  "year": 2017,
+  "publisher": "TechBooks",
+  "ISBN": {
+    "$numberLong": "9784234567890"
+  },
+  "quantity": 9,
+  "category": "Computer Science",
+  "createdAt": {
+    "$date": "2024-04-07T13:57:23.827Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-07T13:57:23.827Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6612a648193d8a5b78c52e2f"
+  },
+  "title": "Learning French",
+  "author": "Victor Hugo",
+  "year": 2016,
+  "publisher": "LangWorld",
+  "ISBN": {
+    "$numberLong": "9784098765432"
+  },
+  "quantity": 4,
+  "category": "Languages",
+  "createdAt": {
+    "$date": "2024-04-07T13:57:28.308Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T13:21:31.285Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "661b94f5d407286298f940da"
+  },
+  "omId": 1232143212,
+  "name": "Patrik",
+  "email": "respergerpatrik@gmail.com",
+  "password": "$2a$10$0lCLrICBNRk//5zcFiCdwOHlgWYUQQt2CQLHOtle2p6YIhYKxqECi",
+  "lastName": "Resperger",
+  "role": "admin",
+  "bookmarkedBooks": [],
+  "borrowedBooks": [],
+  "__v": 20
+},
+{
+  "_id": {
+    "$oid": "661b9503d407286298f940de"
+  },
+  "omId": 1232143212,
+  "name": "Attila",
+  "email": "jagerattila@gmail.com",
+  "password": "$2a$10$kVxtlbavIDZhDBi1qiJ5jud3FWpHluDmeLwnFqz7P4ZFpURm0Z0g6",
+  "lastName": "Jager",
+  "role": "user",
+  "bookmarkedBooks": [],
+  "borrowedBooks": [],
+  "__v": 8
+}]

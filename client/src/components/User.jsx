@@ -23,7 +23,7 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
         expanded ? "h-min" : "h-48"
       } p-2 m-2 border rounded-md w-full bg-white shadow-sm`}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-evenly w-full ">
         <div className="gap-2 h-40 py-5 flex items-center">
           <div
             className={`w-24 h-24 md:w-28 md:h-32 flex justify-center items-center bg-emerald-400 rounded-md`}
@@ -34,7 +34,7 @@ const User = ({ _id, name, lastName, omId, email, borrowedBooks }) => {
           </div>
           <div className="flex h-full p-2 w-full justify-between">
             <div className="flex flex-col w-2/4 justify-between">
-              <div className="flex-col flex">
+              <div className="flex-col flex w-full">
                 <h1 className="font-semibold md:text-xl opacity-95 w-10/12">
                   {lastName + " " + name}
                 </h1>

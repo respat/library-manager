@@ -25,11 +25,26 @@ const AddBook = () => {
     <div className="flex flex-col gap-4 p-4 m-4 border shadow-sm rounded-md bg-white">
       <h4 className="text-lg font-bold mb-2">Add Book</h4>
       <form onSubmit={handleSubmit} className="md:flex gap-5">
-        <FormRow label="Title" name="title" type="text" />
-        <FormRow label="Author" name="author" type="text" />
-        <FormRow label="Publisher" name="publisher" type="text" />
-        <FormRow label="Year" name="year" type="number" />
-        <FormRow label="Quantity" name="quantity" type="number" />
+        <FormRow label="Title" name="title" labelText={"Title"} type="text" />
+        <FormRow
+          label="Author"
+          name="author"
+          labelText={"Author"}
+          type="text"
+        />
+        <FormRow
+          label="Publisher"
+          name="publisher"
+          labelText={"Publisher"}
+          type="text"
+        />
+        <FormRow label="Year" name="year" labelText={"Year"} type="number" />
+        <FormRow
+          label="Quantity"
+          name="quantity"
+          labelText={"Quantity"}
+          type="number"
+        />
         <FormRow label="ISBN" name="ISBN" type="number" />
         <FormRowSelect
           name="category"
